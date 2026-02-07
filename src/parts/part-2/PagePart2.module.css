@@ -19,8 +19,8 @@
   transition: opacity 0.1s ease-in-out;
 }
 
-button:hover,
-button:active {
+.btn-group > button:hover,
+.btn-group > button:active {
   opacity: 1 !important;
 }
 
