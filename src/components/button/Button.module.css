@@ -1,0 +1,12 @@
+.btn {
+  padding: var(--padding-s) var(--padding-m);
+
+  border: 1px solid white;
+  border-radius: 9999px;
+  background-color: transparent;
+
+  color: white;
+  font-weight: 700;
+  word-break: normal;
+  overflow-wrap: break-word;
+}

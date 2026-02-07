@@ -1,0 +1,11 @@
+.page-title-icon {
+  width: calc(var(--r) * 15);
+  height: calc(var(--r) * 15);
+}
+
+.page-title-text {
+  color: white;
+
+  font-size: calc(var(--r) * 13);
+  line-height: calc(var(--r) * 16);
+}

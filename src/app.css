@@ -1,0 +1,87 @@
+#root {
+  /* centered the container */
+  display: grid;
+  place-items: center;
+
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* core of adjust automatically */
+#page-wrapper {
+  /* pc / mobile, the container's ratio is always 9:16 */
+  width: min(100vw, calc(100vh * 9 / 16));
+  max-width: 100vw;
+  max-height: 100vh;
+  aspect-ratio: 9 / 16;
+
+  container-type: size;
+
+  overflow: hidden;
+}
+
+#page-wrapper {
+  /* 
+   * set #page-wrapper as a container 
+   * so we can get a new unit called "r"
+   * 1r equals 1% of the container width
+   */
+  --r: 1cqi;
+
+  --size-xs: calc(var(--r) * 2);
+  --size-s: calc(var(--r) * 4);
+  --size-m: calc(var(--r) * 6);
+  --size-l: calc(var(--r) * 8);
+  --size-xl: calc(var(--r) * 10);
+
+  /* 5约等于18px */
+  --padding-xs: var(--size-xs);
+  --padding-s: var(--size-s);
+  --padding-m: var(--size-m);
+  --padding-l: var(--size-l);
+  --padding-xl: var(--size-xl);
+
+  --font-xs: calc(var(--r) * 3);
+  --font-s: var(--size-s);
+  --font-m: var(--size-m);
+  --font-l: var(--size-l);
+  --font-xl: var(--size-xl);
+
+  --border-w: calc(var(--r) * 0.4);
+}
+
+#page-content {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(135deg, var(--color-w1), var(--color-w4));
+
+  overflow: hidden;
+}
+
+.page-part-1 {
+  padding: var(--padding-xl);
+}
+
+.page-part-1,
+.page-part-3 {
+  flex-shrink: 0;
+}
+
+.page-part-2 {
+  flex: 1;
+  padding: var(--padding-xs) var(--padding-m);
+  overflow: hidden;
+}
+
+.page-part-3 {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--padding-xs) var(--padding-m) var(--padding-s);
+}

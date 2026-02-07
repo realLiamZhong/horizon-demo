@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* 提高页面加载时的视觉体验 */
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-plantation: #174d47;
+  --color-deep-sea: #00634f;
+  --color-dark-spring: #146e54;
+  --color-pine: #0a7a5e;
+
+  --color-w1: var(--color-plantation);
+  --color-w2: var(--color-deep-sea);
+  --color-w3: var(--color-dark-spring);
+  --color-w4: var(--color-pine);
+
+  --font-family-base:
+    "Poppins", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial,
+    sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family-base);
+}
+
+body {
+  position: relative;
+}
+
+.root {
+  isolation: isolate;
+}
