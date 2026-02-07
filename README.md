@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# Horizon Sample
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based interactive frontend application built with Vite and TypeScript. This project features a fixed aspect ratio interface, ensure provide the same layout in different resolutions.
 
-Currently, two official plugins are available:
+## 📊 Summary Breakdown
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| Category                   | Time Allocated |
+| :------------------------- | :------------- |
+| **Infrastructure & Setup** | 2 Hours        |
+| **Component Architecture** | 4 Hours        |
+| **Feature Development**    | 6 Hours        |
+| **Polishing & Docs**       | 2 Hours        |
+| **Total**                  | **14 Hours**   |
 
-## React Compiler
+## 🛠 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React 19 / Vite / Base UI / CSS Modules
 
-## Expanding the ESLint configuration
+## 📦 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Follow these steps to set up the project locally.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Ensure you have Node.js installed on your machine. This project uses `pnpm`.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+**Install dependencies:**
+
+```bash
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Running the Development Server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the local development server:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm dev
 ```
+
+The application will run at `http://localhost:5173/`.
+
+### Building for Production
+
+To create a production-ready build:
+
+```bash
+pnpm build
+```
+
+## 📂 Project Structure
+
+```
+src/
+├── api/             # Mock API services
+├── assets/          # Static assets (fonts, images)
+├── components/      # Reusable UI components (Button, Modal, ScrollList)
+├── constant/        # Static Mock data (Questions)
+├── parts/           # Main functional sections of the page
+│   ├── part-1/      # Header section
+│   ├── part-2/      # Main content (Questions list & Modal)
+│   └── part-3/      # Decorative section
+├── types/           # Type definitions
+├── App.tsx          # Main application component
+└── main.tsx         # Entry point
+```
+
+## 🎨 Design System
+
+The application uses a centered layout with a fixed ratio(9:16) on mobile screen on desktop views.
+
+- Desktop: 100% viewport height, and reactiv width, the app is in the center.
+- Mobile: 100% viewport width, if the screen is too tall, the app will be centered with white bars at the top and bottom. The height is determined by the screen width.
+- Font: [Poppins]("https://fonts.google.com/specimen/Poppins")
