@@ -1,10 +1,10 @@
 import { Button } from "@/components/button";
 import { Modal } from "@/components/modal";
-import { ScrollList } from "@/components/scroll-list";
 import usePagePart2 from "./use-page-part-2";
 import styles from "./PagePart2.module.css";
 import ModalTitle from "./ui/ModalTitle";
 import ModalContent from "./ui/ModalContent";
+import { ScrollArea } from "@base-ui/react";
 
 export default function PagePart2() {
   const {
@@ -22,18 +22,28 @@ export default function PagePart2() {
         <ModalTitle content={activeQuestion?.text} />
         <ModalContent question={activeQuestion} />
       </Modal>
-      <ScrollList>
-        <div className={styles["btn-group"]}>
-          {questionList.map(question => (
-            <Button
-              key={question.id}
-              onClick={() => onSelectQuestion(question)}
-            >
-              {question.text}
-            </Button>
-          ))}
-        </div>
-      </ScrollList>
+      <ScrollArea.Root className={styles["question-list-wrapper"]}>
+        <ScrollArea.Viewport className={styles["question-list-viewport"]}>
+          <ScrollArea.Content className={styles["question-list"]}>
+            <div className={styles["btn-group"]}>
+              {questionList.map(question => (
+                <Button
+                  key={question.id}
+                  onClick={() => onSelectQuestion(question)}
+                >
+                  {question.text}
+                </Button>
+              ))}
+            </div>
+          </ScrollArea.Content>
+        </ScrollArea.Viewport>
+        <ScrollArea.Scrollbar className={styles["question-list-track"]}>
+          <ScrollArea.Thumb className={styles["question-list-thumb"]} />
+        </ScrollArea.Scrollbar>
+      </ScrollArea.Root>
+      {/* <ScrollList>
+        <></>
+      </ScrollList> */}
     </div>
   );
 }
