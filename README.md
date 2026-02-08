@@ -10,7 +10,8 @@ A React-based interactive frontend application built with Vite and TypeScript. T
 | **Component Architecture** | 4 Hours        |
 | **Feature Development**    | 6 Hours        |
 | **Polishing & Docs**       | 2 Hours        |
-| **Total**                  | **14 Hours**   |
+| **Make it better**         | 1 Hours        |
+| **Total**                  | **15 Hours**   |
 
 ## 🛠 Tech Stack
 
@@ -56,7 +57,7 @@ pnpm build
 src/
 ├── api/             # Mock API services
 ├── assets/          # Static assets (fonts, images)
-├── components/      # Reusable UI components (Button, Modal, ScrollList)
+├── components/      # Reusable UI components (Button, Modal)
 ├── constant/        # Static Mock data (Questions)
 ├── parts/           # Main functional sections of the page
 │   ├── part-1/      # Header section
