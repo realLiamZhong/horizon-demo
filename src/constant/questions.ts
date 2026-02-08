@@ -110,34 +110,16 @@ const QUESTIONS: IQuestion[] = [
           src: imgBrodyAlpha,
           desc: "Alpha HPA"
         },
-        text: "A global demand for the high-purity alumina essential for high-tech electronics industries – think LED lighting, semiconductors and lithium-ion batteries – is set to make pioneering company Alpha HPA a leading manufacturer at the centre of the net zero transformation."
+        text: "A global demand for the high-purity alumina essential for high-tech electronics industries – think LED lighting, semiconductors and lithium-ion batteries – is set to make pioneering company Alpha HPA a leading manufacturer at the centre of the net zero transformation. \nWhen its new 10ha state-of the-art Gladstone facility is operational in 2025, Alpha HPA will be one of the largest refineries of its kind in the world, producing an annual 10,000 tonnes of high-purity alumina and other products. Made using 100% renewable energy, those products will play a pivotal role in decarbonising supply chains in the push to net zero. And when its expansion is complete the project will have generated hundreds of local jobs, both permanent and in construction."
       },
       {
         step: 4,
         format: "written",
         headshot: {
-          src: imgBrodyAlpha,
-          desc: "Alpha HPA"
-        },
-        text: "When its new 10ha state-of the-art Gladstone facility is operational in 2025, Alpha HPA will be one of the largest refineries of its kind in the world, producing an annual 10,000 tonnes of high-purity alumina and other products. Made using 100% renewable energy, those products will play a pivotal role in decarbonising supply chains in the push to net zero. And when its expansion is complete the project will have generated hundreds of local jobs, both permanent and in construction."
-      },
-      {
-        step: 5,
-        format: "written",
-        headshot: {
           src: imgFortescueCaseStudy,
           desc: "Green Energy Manufacturing Centre"
         },
-        text: "With the development of Fortescue's Green Energy Manufacturing Centre in Gladstone, the city is cementing its place as Australia's hydrogen capital – and the epicentre of a massive new industry capable of generating thousands of clean energy jobs."
-      },
-      {
-        step: 6,
-        format: "written",
-        headshot: {
-          src: imgFortescueCaseStudy,
-          desc: "Green Energy Manufacturing Centre"
-        },
-        text: "The facility unveiled in April 2024 manufactures electrolysers, which use electricity to extract hydrogen from water. In the next phase of the development, up to 8,000 tonnes of green hydrogen – an increasingly sought-after commodity in the global shift to clean energy – will be produced annually for local and export markets. And in the process, the project will generate 240 construction jobs and 93 ongoing local operational jobs."
+        text: "With the development of Fortescue's Green Energy Manufacturing Centre in Gladstone, the city is cementing its place as Australia's hydrogen capital – and the epicentre of a massive new industry capable of generating thousands of clean energy jobs. \nThe facility unveiled in April 2024 manufactures electrolysers, which use electricity to extract hydrogen from water. In the next phase of the development, up to 8,000 tonnes of green hydrogen – an increasingly sought-after commodity in the global shift to clean energy – will be produced annually for local and export markets. And in the process, the project will generate 240 construction jobs and 93 ongoing local operational jobs."
       }
     ]
   },
