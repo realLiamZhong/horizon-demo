@@ -29,7 +29,11 @@ export default function ModalSwiperWithStep({
         >
           <RiArrowLeftSLine />
         </button>
-        <ModalSwiper params={params} activeSwipeIdx={activeStep} />
+        <ModalSwiper
+          params={params}
+          activeSwipeIdx={activeStep}
+          onSwipe={v => onStepChange("jump", v)}
+        />
         <button
           className={styles["swiper-op-btn"]}
           disabled={activeStep === steps}

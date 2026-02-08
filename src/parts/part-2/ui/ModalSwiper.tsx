@@ -1,33 +1,48 @@
-import { Tabs } from "@base-ui/react";
-import styles from "../PagePart2.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useEffect, useRef } from "react";
+import type { Swiper as TSwiper } from "swiper";
 import type { IQuestionSegParam } from "@/types/question";
 import ModalContentWithHeadshot from "./ModalContentWithHeadshot";
 import ModalVideo from "./ModalVideo";
+import "swiper/swiper.css";
 
 export default function ModalSwiper({
   activeSwipeIdx,
-  params
+  params,
+  onSwipe
 }: {
   activeSwipeIdx: number;
   params?: IQuestionSegParam[];
+  onSwipe: (newStep: number) => void;
 }) {
-  if (!params) return null;
+  if (!params || params.length === 0) return null;
+
+  const swiperRef = useRef<TSwiper | null>(null);
+
+  useEffect(() => {
+    if (params && swiperRef.current) {
+      const targetIndex = params.findIndex(p => p.step === activeSwipeIdx);
+      if (targetIndex !== -1 && targetIndex !== swiperRef.current.activeIndex) {
+        swiperRef.current.slideTo(targetIndex);
+      }
+    }
+  }, [activeSwipeIdx, params]);
+
   return (
-    <Tabs.Root
-      className={styles["swiper-root"]}
-      defaultValue={1}
-      value={activeSwipeIdx}
+    <Swiper
+      onSwiper={swiper => (swiperRef.current = swiper)}
+      onSlideChange={swiper => {
+        const nextStep = params[swiper.activeIndex].step;
+        onSwipe(nextStep);
+      }}
+      slidesPerView={1}
+      spaceBetween={20}
+      grabCursor={true}
     >
       {params?.map(p => (
-        <Tabs.Panel
-          key={p.step}
-          className={styles["swipe-panel"]}
-          value={p.step}
-        >
-          {getPanelContent(p)}
-        </Tabs.Panel>
+        <SwiperSlide key={p.step}>{getPanelContent(p)}</SwiperSlide>
       ))}
-    </Tabs.Root>
+    </Swiper>
   );
 }
 
